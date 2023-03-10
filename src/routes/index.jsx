@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import PokemonDetail from '../components/PokemonDetail/PokemonDetail';
+import Detail from '../pages/Detail/Detail';
 import Home from '../pages/Home/Home';
 
 export const router = createBrowserRouter([
@@ -9,6 +9,6 @@ export const router = createBrowserRouter([
     },
     {
         path: 'pokemon/:pokemonName',
-        element: <PokemonDetail />,
+        element: <Detail />,
     },
 ]);

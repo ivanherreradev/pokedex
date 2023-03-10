@@ -10,8 +10,6 @@ const PokemonDetail = () => {
 
     const { pokemon, isLoading } = usePokemon(url, pokemonName);
 
-    console.log(pokemon);
-
     return isLoading ? (
         <p>Loading...</p>
     ) : (

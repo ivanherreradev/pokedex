@@ -1,16 +1,14 @@
 import React from 'react';
 import styles from './Navbar.module.css';
-import logo from '../../assets/logo.png';
 import { types } from '../../utils/types';
 import { selectStyle } from '../../utils/selectStyle';
+import Logo from '../Logo/Logo';
 
 const Navbar = () => {
     return (
         <header className={styles.header}>
             <nav className={styles.container}>
-                <div className={styles.logoContainer}>
-                    <img src={logo} alt="Logo Pokedex" className={styles.logo} />
-                </div>
+                <Logo />
                 <ul className={styles.list}>
                     <li
                         className={styles.btn}
