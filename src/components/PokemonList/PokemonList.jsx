@@ -7,6 +7,8 @@ const PokemonList = () => {
     const url = 'https://pokeapi.co/api/v2/pokemon?limit=20';
     const { pokemons, loadMore } = useFetch(url);
 
+    pokemons.sort((a, b) => a.id - b.id);
+
     return (
         <div className={styles.container}>
             {pokemons.map((pokemon) => {

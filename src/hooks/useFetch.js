@@ -16,7 +16,6 @@ export const useFetch = (url) => {
                 const data = await response.json();
 
                 setPokemons((currentPokemons) => [...currentPokemons, data]);
-                await pokemons.sort((a, b) => a.id - b.id);
             });
         };
 
