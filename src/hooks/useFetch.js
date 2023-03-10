@@ -26,5 +26,5 @@ export const useFetch = (url) => {
         getPokemons();
     }, []);
 
-    return { pokemons, loadMore };
+    return { pokemons, loadMore, getPokemons };
 };

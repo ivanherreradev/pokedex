@@ -1,14 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { useFetch } from '../../hooks/useFetch';
+import React from 'react';
 import PokemonCard from '../PokemonCard/PokemonCard';
 import styles from './PokemonList.module.css';
 
-const PokemonList = () => {
-    const url = 'https://pokeapi.co/api/v2/pokemon?limit=20';
-    const { pokemons, loadMore } = useFetch(url);
-
-    pokemons.sort((a, b) => a.id - b.id);
-
+const PokemonList = ({ pokemons }) => {
     return (
         <div className={styles.container}>
             {pokemons.map((pokemon) => {
