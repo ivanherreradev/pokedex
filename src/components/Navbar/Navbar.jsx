@@ -12,6 +12,12 @@ const Navbar = () => {
                     <img src={logo} alt="Logo Pokedex" className={styles.logo} />
                 </div>
                 <ul className={styles.list}>
+                    <li
+                        className={styles.btn}
+                        style={{ backgroundColor: '#1c1c1c', color: '#f7f7f7' }}
+                    >
+                        See All
+                    </li>
                     {types.map((element, index) => {
                         return (
                             <li key={index} className={styles.btn} style={selectStyle(element)}>
