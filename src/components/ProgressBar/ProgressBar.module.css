@@ -1,0 +1,13 @@
+.progressbar {
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--clr-gray);
+    box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 0.5);
+}
+
+.bar {
+    transition: 0.5s;
+}
