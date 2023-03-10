@@ -1,4 +1,6 @@
 export const selectStyle = (name) => {
+    if (Array.isArray(name)) name = name[0];
+
     switch (name) {
         case 'fire':
             return { backgroundColor: '#f08030', color: '#1c1c1c' };

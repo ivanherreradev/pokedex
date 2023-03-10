@@ -1,6 +1,6 @@
 .container {
     width: 400px;
-    margin: 2rem auto;
+    margin: 4rem auto;
     border-radius: 1rem;
     background-color: var(--clr-white);
     box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, 0.25);
@@ -20,6 +20,7 @@
 }
 
 .img {
+    z-index: 1;
     width: 9rem;
     height: 9rem;
 }
@@ -39,4 +40,23 @@
 
 .stat h4 {
     font-size: 0.75rem;
+}
+
+.types {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    text-align: center;
+    width: 90px;
+    padding: 0.5rem 1rem;
+    border-radius: 100vmax;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+    transition: 0.2s;
 }
