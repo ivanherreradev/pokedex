@@ -1,11 +1,12 @@
 import React from 'react';
 import { selectStyle } from '../../utils/selectStyle';
 import { idTransform } from '../../utils/idTransform';
+import { Link } from 'react-router-dom';
 import styles from './PokemonCard.module.css';
 
 const PokemonCard = ({ id, img, name, types, weight, height, key }) => {
     return (
-        <div key={key} className={styles.container}>
+        <Link to={`pokemon/${name}`} key={key} className={styles.container}>
             <p className={styles.idBack}>#{idTransform(id)}</p>
             <div className={styles.img}>
                 <img src={img} alt={name} />
@@ -27,7 +28,7 @@ const PokemonCard = ({ id, img, name, types, weight, height, key }) => {
                     <p className={styles.stat}>{weight}kg</p>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
