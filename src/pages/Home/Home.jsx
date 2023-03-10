@@ -4,9 +4,9 @@ import styles from './Home.module.css';
 
 const Home = () => {
     return (
-        <div>
+        <main className={styles.container}>
             <PokemonList />
-        </div>
+        </main>
     );
 };
 
