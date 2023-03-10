@@ -22,8 +22,6 @@ export const useFetch = (url) => {
         createPokemon(data.results);
     };
 
-    console.log(pokemons);
-
     useEffect(() => {
         getPokemons();
     }, []);
