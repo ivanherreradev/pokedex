@@ -15,6 +15,9 @@ const Home = () => {
             <Navbar />
             <main className={styles.container}>
                 <PokemonList pokemons={pokemons} />
+                <button onClick={() => getPokemons(loadMore)} className={styles.btn}>
+                    Load more
+                </button>
             </main>
         </>
     );
