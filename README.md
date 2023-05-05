@@ -1,6 +1,6 @@
 ## Pokedex (TODO-List)
 
-- [ ] Fetch all pokemons
+- [ x ] Fetch all pokemons
 - [ ] Pokemon card
 - [ ] Pagination
 - [ ] Filters
