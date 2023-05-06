@@ -1,13 +1,11 @@
-import { useState } from 'react';
-import { usePokemon } from './hooks/usePokemon';
+import Home from './pages/Home';
 
 function App() {
-  const [url, setUrl] = useState(
-    'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0'
+  return (
+    <div>
+      <Home />
+    </div>
   );
-  const { pokemon, loading } = usePokemon(url);
-
-  return <div>Hello world 👋</div>;
 }
 
 export default App;
