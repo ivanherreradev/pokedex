@@ -1,7 +1,7 @@
 ## Pokedex (TODO-List)
 
 - [ x ] Fetch all pokemons
-- [ ] Pokemon card
+- [ x ] Rendering of pokemon cards
 - [ ] Pagination
 - [ ] Filters
 - [ ] Router
