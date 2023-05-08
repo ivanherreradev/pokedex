@@ -2,7 +2,7 @@
 
 - [ x ] Fetch all pokemons
 - [ x ] Rendering of pokemon cards
-- [ ] Pagination
+- [ x ] Pagination
 - [ ] Filters
 - [ ] Router
 - [ ] Pokemon detail page
