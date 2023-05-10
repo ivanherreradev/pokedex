@@ -3,6 +3,6 @@
 - [ x ] Fetch all pokemons
 - [ x ] Rendering of pokemon cards
 - [ x ] Pagination
-- [ ] Filters
+- [ x ] Filter by Type
 - [ ] Router
 - [ ] Pokemon detail page
