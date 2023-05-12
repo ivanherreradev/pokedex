@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { usePokemon } from '../hooks/usePokemon';
+import { usePokemon } from '../../hooks/usePokemon';
 import style from './styles.module.css';
-import Pagination from '../components/Pagination/Pagination';
+import Pagination from '../../components/Pagination/Pagination';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [url, setUrl] = useState(
@@ -72,9 +73,13 @@ function Home() {
               .slice((page - 1) * perPage, (page - 1) * perPage + perPage)
               .map((pokemon) => {
                 return (
-                  <div key={pokemon.id} className={style.pokemon}>
+                  <Link
+                    to={`/pokemon/${pokemon.id}`}
+                    key={pokemon.id}
+                    className={style.pokemon}
+                  >
                     <img src={pokemon.sprites.front_default} />
-                  </div>
+                  </Link>
                 );
               })}
           </div>
