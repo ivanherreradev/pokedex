@@ -5,4 +5,5 @@
 - [ x ] Pagination
 - [ x ] Filter by Type
 - [ x ] Router
-- [ ] Pokemon detail page
+- [ x ] Pokemon detail page
+- [] Styles
