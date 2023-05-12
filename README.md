@@ -4,5 +4,5 @@
 - [ x ] Rendering of pokemon cards
 - [ x ] Pagination
 - [ x ] Filter by Type
-- [ ] Router
+- [ x ] Router
 - [ ] Pokemon detail page
