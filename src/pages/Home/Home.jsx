@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { usePokemon } from '../../hooks/usePokemon';
+import { Ring } from '@uiball/loaders';
 import style from './styles.module.css';
 import Pagination from '../../components/Pagination/Pagination';
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
+import Dropdown from '../../components/Dropdown/Dropdown';
 
 function Home() {
   const [url, setUrl] = useState(
@@ -35,40 +37,21 @@ function Home() {
 
   return (
     <div>
-      <div>
-        <label htmlFor="types">Filter by type:</label>
-        <select
-          id="types"
-          value={selectedType}
-          onChange={(e) => setSelectedType(e.target.value)}
-        >
-          <option value="">All</option>
-          <option value="grass">Grass</option>
-          <option value="fire">Fire</option>
-          <option value="water">Water</option>
-          <option value="electric">Electric</option>
-          <option value="flying">Flying</option>
-          <option value="bug">Bug</option>
-          <option value="normal">Normal</option>
-          <option value="poison">Poison</option>
-          <option value="ground">Ground</option>
-          <option value="rock">Rock</option>
-          <option value="fighting">Fighting</option>
-          <option value="psychic">Psychic</option>
-          <option value="ghost">Ghost</option>
-          <option value="ice">Ice</option>
-          <option value="dragon">Dragon</option>
-          <option value="dark">Dark</option>
-          <option value="steel">Steel</option>
-          <option value="fairy">Fairy</option>
-        </select>
+      <div className={style.filterContainer}>
+        <Dropdown
+          setPage={setPage}
+          selectedType={selectedType}
+          setSelectedType={setSelectedType}
+        />
       </div>
 
       {loading ? (
-        <div>Loading...</div>
+        <div className={style.homeLoader}>
+          <Ring size={40} lineWeight={5} speed={2} color="black" />
+        </div>
       ) : (
         <div>
-          <div className={style.container}>
+          <div className={style.homeContainer}>
             {filteredPokemons
               .slice((page - 1) * perPage, (page - 1) * perPage + perPage)
               .map((pokemon) => {
