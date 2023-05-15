@@ -2,6 +2,10 @@ import { Link } from 'react-router-dom';
 import style from './styles.module.css';
 
 function PokemonCard({ pokemon }) {
+  const formatPokemonName = (name) => {
+    return name.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  };
+
   return (
     <Link
       to={`/pokemon/${pokemon.id}`}
@@ -9,11 +13,7 @@ function PokemonCard({ pokemon }) {
       className={`${style.pokemonCardContainer} ${pokemon.types[0].type.name}`}
     >
       <div className={style.pokemonCardInfo}>
-        <h3>
-          {pokemon.name.length > 9
-            ? `${pokemon.name.slice(0, 8)}...`
-            : pokemon.name}
-        </h3>
+        <h3>{formatPokemonName(pokemon.name)}</h3>
 
         <p className={style.pokemonCardInfoTypes}>
           {pokemon.types.map((type, index) => {
