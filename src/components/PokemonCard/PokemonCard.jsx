@@ -9,7 +9,11 @@ function PokemonCard({ pokemon }) {
       className={`${style.pokemonCardContainer} ${pokemon.types[0].type.name}`}
     >
       <div className={style.pokemonCardInfo}>
-        <h3>{pokemon.name}</h3>
+        <h3>
+          {pokemon.name.length > 9
+            ? `${pokemon.name.slice(0, 8)}...`
+            : pokemon.name}
+        </h3>
 
         <p className={style.pokemonCardInfoTypes}>
           {pokemon.types.map((type, index) => {
@@ -21,7 +25,12 @@ function PokemonCard({ pokemon }) {
           })}
         </p>
       </div>
-      <img src={pokemon?.sprites?.other?.dream_world?.front_default} />
+      <img
+        src={
+          pokemon?.sprites?.other?.dream_world?.front_default ||
+          pokemon?.sprites?.other?.['official-artwork']?.front_default
+        }
+      />
     </Link>
   );
 }
