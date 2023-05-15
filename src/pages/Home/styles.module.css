@@ -6,15 +6,6 @@
   margin: 10px;
 }
 
-.pokemon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid 1px #000;
-  padding: 12px;
-  border-radius: 20px;
-}
-
 /*=============== BREAKPOINTS ===============*/
 /* For large devices */
 @media screen and (max-width: 1124px) {
