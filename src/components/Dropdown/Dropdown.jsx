@@ -36,6 +36,7 @@ const Dropdown = ({ selectedType, setSelectedType, setPage }) => {
                 onClick={() => {
                   setSelectedType(option);
                   setIsActive(false);
+                  setPage(1);
                 }}
               >
                 {option}
