@@ -36,7 +36,7 @@ function Home() {
   const max = Math.ceil(filteredPokemons.length / perPage);
 
   return (
-    <div>
+    <div className={style.homeBody}>
       <div className={style.filterContainer}>
         <Dropdown
           setPage={setPage}
