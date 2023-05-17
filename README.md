@@ -6,4 +6,4 @@
 - [ x ] Filter by Type
 - [ x ] Router
 - [ x ] Pokemon detail page
-- [] Styles
+- [ x ] Styles
