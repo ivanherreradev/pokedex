@@ -29,9 +29,10 @@ const Dropdown = ({ selectedType, setSelectedType, setPage }) => {
           >
             All
           </div>
-          {options.map((option) => {
+          {options.map((option, index) => {
             return (
               <div
+                key={index}
                 className={styles.dropdownItem}
                 onClick={() => {
                   setSelectedType(option);
