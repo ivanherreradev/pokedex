@@ -2,6 +2,9 @@ import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import style from './styles.module.css';
+import { ArrowLeftIcon } from '../../assets/arrow';
+import { WeightIcon } from '../../assets/WeightIcon';
+import { HeightIcon } from '../../assets/HeightIcon';
 
 function PokemonDetail() {
   const { id } = useParams();
@@ -22,55 +25,121 @@ function PokemonDetail() {
     getPokemon();
   }, []);
 
+  console.log(pokemon);
+
   return (
-    <div>
-      <header>
-        <div>
-          <Link to={'/'}>Home</Link>
-          <h1>{pokemon?.name}</h1>
+    <>
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <div
+          className={`${style.pokemonDetailBg} ${
+            pokemon.types && pokemon.types.length > 0
+              ? pokemon.types[0].type.name
+              : ''
+          }`}
+        >
+          {/* Header */}
+          <header className={style.pokemonDetailHeader}>
+            <div className={style.pokemonDetailHeaderLeft}>
+              <Link to={'/'}>
+                <ArrowLeftIcon />
+              </Link>
+              <span>{pokemon?.name}</span>
+            </div>
+            <p>#{pokemon?.id}</p>
+          </header>
+
+          {/* Info */}
+          <div className={style.pokemonDetailInfo}>
+            <img
+              src={
+                pokemon?.sprites?.other?.dream_world?.front_default ||
+                pokemon?.sprites?.other?.['official-artwork']?.front_default
+              }
+              alt={pokemon?.name}
+            />
+
+            {/* Types */}
+            <div className={style.pokemonDetailInfoTypes}>
+              {pokemon?.types?.map((type) => {
+                return (
+                  <div
+                    key={type.type.name}
+                    className={`${style.pokemonDetailInfoType} ${
+                      pokemon.types && pokemon.types.length > 0
+                        ? pokemon.types[0].type.name
+                        : ''
+                    }`}
+                  >
+                    {type.type.name}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Title */}
+            <h2 className={style.pokemonDetailTitle}>About</h2>
+
+            {/* Stats */}
+            <div className={style.pokemonDetailStats}>
+              <div className={style.pokemonDetailStatsItem}>
+                <WeightIcon />
+                <span>{pokemon?.weight / 10} kg</span>
+                <p>Weight</p>
+              </div>
+              <div className={style.pokemonDetailStatsItem}>
+                <HeightIcon />
+                <span>{pokemon?.height / 10} m</span>
+                <p>Height</p>
+              </div>
+            </div>
+
+            {/* Title */}
+            <h2 className={style.pokemonDetailTitle}>Base Stats</h2>
+
+            {/* Base Stats */}
+            <div className={style.pokemonDetailBaseStats}>
+              {pokemon?.stats?.map((stat) => {
+                return (
+                  <div
+                    key={stat.stat.name}
+                    className={style.pokemonDetailBaseStatsItem}
+                  >
+                    <span>{stat.stat.name}</span>
+                    <div className={style.pokemonDetailBaseStatsBars}>
+                      <p>{stat.base_stat}</p>
+                      <div className={style.pokemonDetailBaseStatsBarsLine}>
+                        <div
+                          className={`${style.pokemonDetailBaseStatsBarsBg} ${
+                            pokemon.types && pokemon.types.length > 0
+                              ? pokemon.types[0].type.name
+                              : ''
+                          }`}
+                        />
+                        <div
+                          className={`${
+                            style.pokemonDetailBaseStatsBarsSecondLine
+                          } ${
+                            pokemon.types && pokemon.types.length > 0
+                              ? pokemon.types[0].type.name
+                              : ''
+                          }`}
+                          style={{
+                            opacity: '1',
+                            width: `${(stat.base_stat / 255) * 100}%`,
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
-        <p>#{pokemon?.id}</p>
-      </header>
-
-      <div>
-        <img
-          src={pokemon?.sprites?.other?.dream_world?.front_default}
-          alt={pokemon?.name}
-        />
-
-        <div>
-          {pokemon?.types?.map((type) => {
-            return <div key={type.type.name}>{type.type.name}</div>;
-          })}
-        </div>
-
-        <h2>About</h2>
-
-        <div>
-          <span>Weight: {pokemon?.weight} </span>
-          <span>Height: {pokemon?.height} </span>
-          <ul>
-            Abilities:{' '}
-            {pokemon?.abilities?.map((ability) => {
-              return (
-                <li key={ability.ability.name}>{ability.ability.name} </li>
-              );
-            })}
-          </ul>
-        </div>
-
-        <h2>Base Stats</h2>
-        <ul>
-          {pokemon?.stats?.map((stat) => {
-            return (
-              <li key={stat.stat.name}>
-                {stat.stat.name} ({stat.base_stat})
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 
