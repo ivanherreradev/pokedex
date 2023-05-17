@@ -55,7 +55,7 @@ function Home() {
             {filteredPokemons
               .slice((page - 1) * perPage, (page - 1) * perPage + perPage)
               .map((pokemon) => {
-                return <PokemonCard pokemon={pokemon} />;
+                return <PokemonCard pokemon={pokemon} key={pokemon.id} />;
               })}
           </div>
 
