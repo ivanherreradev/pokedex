@@ -1,0 +1,36 @@
+.header {
+  position: relative;
+  max-width: 650px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  color: white;
+}
+
+.header p {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.headerLeft span {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 32px;
+}
+
+.headerLeft svg {
+  cursor: pointer;
+}
+
+.headerLeft svg:hover {
+  transform: scale(1.2);
+  transition-duration: 0.3s;
+}
