@@ -1,31 +1,13 @@
 import { Link, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import style from './styles.module.css';
+import { usePokemonDetails } from '../../hooks/usePokemonDetails';
 import { ArrowLeftIcon } from '../../assets/arrow';
 import { WeightIcon } from '../../assets/WeightIcon';
 import { HeightIcon } from '../../assets/HeightIcon';
+import style from './styles.module.css';
 
 function PokemonDetail() {
   const { id } = useParams();
-  const [pokemon, setPokemon] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const getPokemon = async () => {
-    setLoading(true);
-
-    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
-
-    setPokemon(response.data);
-
-    setLoading(false);
-  };
-
-  useEffect(() => {
-    getPokemon();
-  }, []);
-
-  console.log(pokemon);
+  const { pokemon, loading } = usePokemonDetails(id);
 
   return (
     <>
