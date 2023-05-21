@@ -5,6 +5,7 @@ import style from './styles.module.css';
 import Pagination from '../../components/Pagination/Pagination';
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
 import Dropdown from '../../components/Dropdown/Dropdown';
+import Footer from '../../components/Footer/Footer';
 
 function Home() {
   const [url, setUrl] = useState(
@@ -60,6 +61,8 @@ function Home() {
           </div>
 
           <Pagination page={page} setPage={setPage} max={max} />
+
+          <Footer />
         </div>
       )}
     </div>

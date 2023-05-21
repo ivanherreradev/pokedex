@@ -1,0 +1,35 @@
+.footerContainer {
+  border-top: 1px solid #cecece;
+}
+
+.footerMadeWith {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.footerLinks a {
+  color: #212121;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footerLinks a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.footerLink {
+  display: flex;
+  gap: 8px;
+}
